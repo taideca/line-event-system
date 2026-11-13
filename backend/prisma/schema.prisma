@@ -4,8 +4,7 @@
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -13,12 +12,14 @@ datasource db {
 }
 
 model Content {
-  id               Int      @id @default(autoincrement())
-  name             String
-  maxCapacity      Int
-  estimatedTime    Int
-  concurrentSlots  Int
-  isActive         Boolean  @default(true)
+  id        Int      @id @default(autoincrement())
+  name      String
+  capacity  Int
+  time      Int
+  slot      Int
+  price     Int
+  isPer     Boolean
+  isActive  Boolean  @default(true)
 }
 
 model Reservation {
